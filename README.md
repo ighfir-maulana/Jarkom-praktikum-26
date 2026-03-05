@@ -12,7 +12,7 @@ Repositori ini adalah dokumentasi perjalanan praktikum saya dalam mata kuliah **
 
 ## 🚀 Status Praktikum
 ![Progress](https://img.shields.io/badge/Progress-2%20%2F%2016%20Modules-yellowgreen?style=for-the-badge&logo=progress)
-![Lab](https://img.shields.io/badge/Lab-Informatics_Tel-U-maroon?style=for-the-badge)
+![Lab](https://img.shields.io/badge/Lab-Informatics_TelU-maroon?style=for-the-badge)
 ![Tools](https://img.shields.io/badge/Analyzed_with-Wireshark-blue?style=for-the-badge&logo=wireshark)
 
 ---
