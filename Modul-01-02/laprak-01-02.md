@@ -8,8 +8,8 @@ Kelas   : IF-04-04
 ---
 
 ## 📋 Daftar Isi
-- [Prasyarat](#prasyarat)
-- [Langkah Instalasi (Modul 1)](#langkah-instalasi-modul-1)
+- [Prasyarat](#-prasyarat)
+- [Langkah Instalasi (Modul 1)](#-langkah-instalasi-modul-1)
 - [Pengenalan Tools Analisis HTTP (Modul 2)](#-pengenalan-tools-analisis-http-modul-2)
 - [Kontribusi](#-kontribusi)
 
