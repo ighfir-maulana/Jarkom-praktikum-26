@@ -44,7 +44,7 @@ Berikut adalah daftar modul praktikum yang dikerjakan berdasarkan kurikulum resm
 ## 📁 Struktur Repositori
 ```bash
 .
-├── Modul-01-02/           # Laporan Persiapan, Running Modul, HTTP Capture
+├── Modul-01-02/        # Laporan Persiapan, Running Modul, HTTP Capture
 ├── Modul-03/           # 
 ├── assets/             # Kumpulan aset hasil praktikum
 └── README.md           # Tampilan utama repositori
