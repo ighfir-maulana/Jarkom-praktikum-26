@@ -16,7 +16,7 @@ Kelas   : IF-04-04
 ---
 
 ## ⚙️ Prasyarat
-Sebelum memulai praktikum, pastikan perangkatmu sudah terinstal beberapa perangkat lunak berikut:
+Sebelum memulai praktikum, pastikan *device*mu sudah terinstal beberapa *software* berikut:
 
 1.  **Wireshark**: Alat analisis protokol jaringan (Packet Sniffer).
 2.  **Npcap / WinPcap**: Driver yang dibutuhkan agar Wireshark dapat menangkap paket secara real-time.
