@@ -33,6 +33,7 @@ Kelas   : IF-04-04
 * Perhatikan pesan **GET** dan respons **200 OK** untuk melihat informasi lebih detail.
 ![tampilan panel capture Wireshark](../Assets/Week2-3.png)
 * Perhatikan panah ke kanan dan ke kiri di bagian samping kiri panel. Panah ke arah menandakan kita sedang meminta/*request* ke server (GET). Sedangkan panah ke kiri menandakan server memberikan informasi yang telah kita minta (200 OK).
+
 ![panah ke kiri dan kanan](../Assets/Week2-4.png)
 
 ### 2. HTTP Conditional GET
@@ -43,6 +44,7 @@ Kelas   : IF-04-04
 * Lakukan *refresh* pada halaman tersebut.
 * Ketik di kolom filter `http` (untuk langkah detailnya, silakan lihat [modul 1 & 2 ](../Modul-01-02/laprak-01-02.md)).
 * Amati pesan `GET` yang mengandung header `If-Modified-Since` dan respons server `304 Not Modified` yang menandakan penggunaan cache.
+
 ![tampilan yang menandakan penggunaan cache](../Assets/Week2-6.png)
 
 ### 3. Retrieving Long Documents
@@ -51,8 +53,10 @@ Kelas   : IF-04-04
 ![tampilan web tujuan](../Assets/Week2-7.png)
 * Ketik di kolom filter `http` (untuk langkah detailnya, silakan lihat [modul 1 & 2 ](../Modul-01-02/laprak-01-02.md))
 * Klik `HTTP/1.1 200 OK` pada panel *capture* Wireshark.
+
 ![HTTP/1.1 200 OK](../Assets/Week2-8.png)
 * Perhatikan teks `Transmission Control Protocol` di bagian bawah Wireshark.
+
 ![tampilan Transmission Control Protocol](../Assets/Week2-9.png)
 * Klik teks tersebut agar bisa melihat informasi lebih detail.
 * Scroll ke bawah, cari, dan klik teks `4 Reassembled TCP Segments`.
