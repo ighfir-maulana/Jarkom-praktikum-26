@@ -15,7 +15,6 @@ Kelas   : IF-04-04
   - [3. Retrieving Long Documents](#3-retrieving-long-documents)
   - [4. HTML Documents dengan Embedded Objects](#4-html-documents-dengan-embedded-objects)
   - [5. HTTP Authentication](#5-http-authentication)
-- [Fitur Utama](#-fitur-utama)
 - [Kontribusi](#-kontribusi)
 
 ## ⚙️ Prasyarat & Instalasi
