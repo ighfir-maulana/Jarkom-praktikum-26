@@ -68,6 +68,7 @@ Kelas   : IF-04-04
 ![tampilan web tujuan](../Assets/Week2-11.png)
 * Ketik di kolom filter `http` (untuk langkah detailnya, silakan lihat [modul 1 & 2 ](../Modul-01-02/laprak-01-02.md))
 * Perhatikan `GET` selain yang meminta URL web tersebut. Terdapat beberapa `GET` lain yang menandakan ada objek lain (dalam *case* ini png dan jpg) yang kita minta dan ternyata tidak disimpan dalam html itu sendiri melainkan URL yang menuju objek-objek yang tersebut yang disematkan pada web yang kita tuju.
+
 ![GET lain](../Assets/Week2-12.png)
 
 
@@ -80,6 +81,7 @@ Kelas   : IF-04-04
 ![tampilan web tujuan](../Assets/Week2-14.png)
 * Ketik di kolom filter `http` (untuk langkah detailnya, silakan lihat [modul 1 & 2 ](../Modul-01-02/laprak-01-02.md))
 * Perhatikan teks pada panel *record* di Wireshark. Teksnya akan jauh berbeda dari URL-URL yang sebelumnya telah kita akses. Lebih panjang dan lebih kompleks. Menandakan bahwa ada step tambahan berupa memasukkan *username* dan *password* untuk mengakses URL tersebut.
+
 ![tampilan teks lebih panjang](../Assets/Week2-15.png)
 
 ## 🤝 Kontribusi
