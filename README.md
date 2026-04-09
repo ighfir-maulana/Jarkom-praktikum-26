@@ -47,5 +47,6 @@ Berikut adalah daftar modul praktikum yang dikerjakan berdasarkan kurikulum resm
 .
 ├── Modul-01-02/        # Laporan Persiapan, Running Modul, HTTP Capture
 ├── Modul-03/           # HTTP
+├── Modul-04-05/        # DNS & UDP
 ├── assets/             # Kumpulan aset hasil praktikum
 └── README.md           # Tampilan utama repositori
