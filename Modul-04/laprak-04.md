@@ -36,9 +36,6 @@ Kelas   : IF-04-04
 ---
 
 ## 📝 Hasil & Jawaban Pertanyaan
-
-Berikut adalah jawaban untuk pertanyaan-pertanyaan yang terdapat dalam modul praktikum:
-
 ### Bundle 1 (Nslookup)
 1. **Jalankan nslookup untuk mendapatkan alamat IP dari server web di Asia. Berapa alamat IP server tersebut?**
 
@@ -143,7 +140,31 @@ Buka browser (kalo aku pake mode *Incognito* biar bersih dari *cache*), lalu buk
 ![ss soal 3 bundle 5](../Assets/Modul4-22.png)
   * **Jawaban:** Ada 2 jawaban yang berisi nama domain, *tipe*, *class*, nilai TTL (*Time to Live*), panjang data, dan *Address*.
 
-### Modul 5 (nslookup www.aiit.or.kr bitsy.mit.edu)
+### Modul 5 UDP
+Sebelum menjawab pertanyaa pada Modul 5 ini, buka `Wireshark` dan pilih metode internet yang kita pakai (kalo aku pakai Wi-Fi). Di kolom filter, ketik `udp`. Lalu klik *Start*. Kemudian buka `cmd` lalu ketikkan `nslookup google.com`. Pilih satu paket UDP dari hasil tersebut dan mari kita analisis.
+
+1. **Pilih satu paket UDP yang terdapat pada trace Anda. Dari paket tersebut, berapa banyak “field” yang terdapat pada header UDP? Sebutkan nama-nama field yang Anda temukan!**
+![ss soal 1 modul 5](../Assets/Modul5-1.png)
+  * **Jawaban:** Ada 4 field utama pada header UDP tersebut, yaitu source port, destination port, length, checksum.
+
+2. **Perhatikan informasi “content field” pada paket yang Anda pilih di pertanyaan 1. Berapa panjang (dalam satuan byte) masing-masing “field” yang terdapat pada header UDP?**
+  * **Jawaban:** Masing-masing dari keempat field di atas memiliki panjang yang sama, yaitu 2 byte dengan total panjang header UDP adalah 8 byte.
+
+3. **Nilai yang tertera pada ”Length” menyatakan nilai apa? Verfikasi jawaban Anda melalui paket UDP pada trace.**
+![ss soal 3 modul 5](../Assets/Modul5-1.png)
+  * **Jawaban:** Nilai pada field *Length* menyatakan panjang total segmen UDP, yaitu jumlah dari Header (8 byte) + Data/Payload. Untuk pembuktiannya dapat dilihat seperti di gambar. *Length*: 36 sedangkan UDP payload-nya 28 bytes. Jika dihubungkan dengan ukuran total jang header UDP, maka perhitungannya seperti ini: 8 + 28 = 36 (valid).
+
+4. **Berapa jumlah maksimum byte yang dapat disertakan dalam payload UDP? (Petunjuk: jawaban untuk pertanyaan ini dapat ditentukan dari jawaban Anda untuk pertanyaan 2)**
+  * **Jawaban:** Karena field "Length" memiliki ukuran 16 bit (2 byte), nilai maksimumnya adalah $2^{16} - 1 = 65.535$ byte (kenapa dikurang 1? karena perhitungan komputer dimulai dari 0). Karena header UDP berukuran 8 byte, maka jumlah maksimum data (payload) yang bisa dibawa adalah: $65.535 - 8 =$ 65.527 byte.
+
+5. **Berapa nomor port terbesar yang dapat menjadi port sumber? (Petunjuk: lihat petunjuk pada pertanyaan 4)**
+  * **Jawaban:** Karena sama sama seperti *field length*, *field port* yang berukuran 16 bit (2 byte), maka ukuran terbesarnya juga sama dengan *field length*, yaitu 65.527.
+
+6. **Berapa nomor protokol untuk UDP? Berikan jawaban Anda dalam notasi heksadesimal dan desimal. Untuk menjawab pertanyaan ini, Anda harus melihat ke bagian ”Protocol” pada datagram IP yang mengandung segmen UDP.**
+  * **Jawaban:** Notasi desimal: 17 dan notasi heksadesimal: 0x11 ($16 \times 1 + 1$)
+
+7. **Periksa pasangan paket UDP di mana host Anda mengirimkan paket UDP pertama dan paket UDP kedua merupakan balasan dari paket UDP yang pertama. (Petunjuk: agar paket kedua merupakan balasan dari paket pertama, pengirim paket pertama harus menjadi tujuan dari paket kedua). Jelaskan hubungan antara nomor port pada kedua paket tersebut!**
+  * **Jawaban:** Kalo kita memeriksa paket pertama (permintaan) dan paket kedua (balasan), maka nomor port tersebut bertukar posisi. Ketika paket pertama (permintaan) Source Port = A dan Destination Port = B. Tapi Ketika paket kedua (balasan) Source Port = B dan Destination Port = A.
 
 ## 🤝 Kontribusi
 Laporan ini disusun sebagai bagian dari tugas praktikum S-1 Informatika Telkom University. Kalau kamu ingin memberikan saran atau perbaikan pada dokumentasi ini, silakan ikuti langkah berikut:
