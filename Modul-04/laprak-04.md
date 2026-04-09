@@ -64,88 +64,86 @@ Berikut adalah jawaban untuk pertanyaan-pertanyaan yang terdapat dalam modul pra
 
    * **Hasil 3:** Untuk hasil pencarian alamat IP Server Email `mta7.am0.yahoodns.net` akan terlihat seperti ini.
 ![ss soal 3.3 bundle 1](../Assets/Modul4-5.png)
-   * **Query:** `nslookup mta5.am0.yahoodns.net`
+   * **Query:** `nslookup mta7.am0.yahoodns.net`
 
 ### Bundle 2 (http://www.ietf.org)
+Sebelum menjawab Bundle 2 ini, coba kalian buka `CMD (admin)` dan ketik `ipconfig /flushdns` agar memastikan komputer benar-benar bertanya ke server, bukan membaca catatan lama. Setelah itu, cari `IP` dengan mengetikkan `ipconfig` pada `CMD` (misal: **192.168.1.15**).
+
+Lalu buka `Wireshark` dan pilih metode internet yang kita pakai (kalo aku pakai Wi-Fi). Di kolom filter, ketik `ip.addr == [IP KAMU]` (misal: **ip.addr == 192.168.1.15**). Lalu klik *Start*.
+
+Buka browser (kalo aku pake mode *Incognito* biar bersih dari *cache*), lalu buka http://www.ietf.org. Terakhir, *stop capture*.
+
 1. **Cari pesan permintaan DNS dan balasannya. Apakah pesan tersebut dikirimkan melalui UDP atau TCP?**
-  * **Jawaban:** Pesan dikirim ke alamat IP Server DNS lokal (biasanya alamat Gateway atau IP DNS Google 8.8.8.8 tergantung pengaturan). Alamat ini dapat divalidasi dengan hasil `ipconfig /all`.
+![ss soal 1 bundle 2](../Assets/Modul4-7.png)
+  * **Jawaban:** Berdasarkan hasil praktikum saya, pesan tersebut dikirimkan melalui UDP, terlihat seperti gambar di atas.
 
 2. **Apa port tujuan pada pesan permintaan DNS? Apa port sumber pada pesan balasannya?**
-  * **Jawaban:**
+  * **Jawaban:** Port tujuan pada pesan permintaan: 53 dan port sumber pada pesan balasannya: 53. Ya secara logika harusnya sama karena port itu adalah port yang meminta dan port yang akan dibalas.
 
 3. **Pada pesan permintaan DNS, apa alamat IP tujuannya? Apa alamat IP server DNS lokal anda (gunakan ipconfig untuk mencari tahu)? Apakah kedua alamat IP tersebut sama?**
-  * **Jawaban:**
+![ss soal 3 bundle 2](../Assets/Modul4-8.png)
+  * **Jawaban:** alamat IP-nya sama seperti IP saya (saya tidak ingin menyebutkannya secara jelas karena saya tidak tahu itu aman atau tidak).
 
 4. **Periksa pesan permintaan DNS. Apa “jenis” atau ”type” dari pesan tersebut? Apakah pesan permintaan tersebut mengandung ”jawaban” atau ”answers”?**
-  * **Jawaban:**
+![ss soal 4 bundle 2](../Assets/Modul4-9.png)
+  * **Jawaban:** Pesan permintaan bertipe A dan tidak mengandung jawaban (`Answers RRs: 0`, seperti di gambar) karena bagian jawaban hanya diisi oleh server saat membalas.
 
 5. **Periksa pesan balasan DNS. Berapa banyak ”jawaban” atau ”answers” yang terdapat di dalamnya? Apa saja isi yang terkandung dalam setiap jawaban tersebut?**
-  * **Jawaban:**
+![ss soal 5 bundle 2](../Assets/Modul4-10.png)
+  * **Jawaban:** Ada 2 jawaban yang berisi nama domain, *tipe record* (A), *class*, nilai TTL (*Time to Live*), panjang data, dan alamat IP dari www.ietf.org.
 
 6. **Perhatikan paket TCP SYN yang selanjutnya dikirimkan oleh host Anda. Apakah alamat IP pada paket tersebut sesuai dengan alamat IP yang tertera pada pesan balasan DNS?**
-  * **Jawaban:**
+![ss soal 6 bundle 2](../Assets/Modul4-11.png)
+  * **Jawaban:** Seharusnya, alamat IP tujuan pada paket TCP SYN pasti sesuai dengan alamat IP di paket balasan sebelumnya. Tapi di sini, saya tidak bisa menemukan alamat IP yang seperti itu. Bisa jadi karena saya membuka beberapa tab ataupun karena *browser* menggunakan alamat IPv6 (AAAA record) sehingga saya tidak bisa menemukannya.
 
 7. **Halaman web yang sebelumnya anda akses (http://www.ietf.org) memuat beberapa gambar. Apakah host Anda perlu mengirimkan pesan permintaan DNS baru setiap kali ingin mengakses suatu gambar?**
-  * **Jawaban:**
-
-
-1. **Ke alamat IP manakah pesan permintaan DNS dikirimkan? Apakah itu server DNS lokal Anda?**
-   * **Jawaban:** Pesan dikirim ke alamat IP Server DNS lokal (biasanya alamat Gateway atau IP DNS Google 8.8.8.8 tergantung pengaturan). Alamat ini dapat divalidasi dengan hasil `ipconfig /all`.
-
-2. **Periksa pesan permintaan (Query) DNS. Apa "type" pesan tersebut? Apakah mengandung "answers"?**
-   * **Jawaban:** Tipe pesan kueri biasanya adalah **Type A** (Standard Query). Pesan kueri **tidak mengandung jawaban** (0 Answers); ia hanya berisi bagian "Questions".
-
-3. **Periksa pesan balasan (Response) DNS. Berapa banyak "answers" yang diberikan? Apa isinya?**
-   * **Jawaban:** Jumlah jawaban bervariasi tergantung domain. Isinya berupa record tipe A yang memetakan nama host ke alamat IP tujuan (misal: `www.aiit.or.kr` -> `210.102.100.222`).
-
-4. **Analisis Header UDP (Berdasarkan Modul): Apa saja field yang terdapat pada header UDP?**
-   * **Jawaban:** Header UDP terdiri dari 4 field utama:
-     1. Source Port
-     2. Destination Port
-     3. Length
-     4. Checksum
+![ss soal 7 bundle 2](../Assets/Modul4-12.png)
+  * **Jawaban:** Tidak, terlihat seperti di bukti yang saya lampirkan, hanya butuh beberapa *query* untuk mengakses www.ietf.org secara penuh. Itu karean informasi-informasi akan disimpan di DNS Cache lokal untuk sementara waktu sehingga tidak perlu mengirimkan *query* baru setiap kali ingin mengakses suatu gambar.
 
 ### Bundle 3 (http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip)
 1. **Apa port tujuan pada pesan permintaan DNS? Apa port sumber pada pesan balasan DNS?**
-  * **Jawaban:** 
+![ss soal 1.1 bundle 3.1](../Assets/Modul4-13.png)
+![ss soal 1.2 bundle 3.1](../Assets/Modul4-14.png)
+  * **Jawaban:** Port tujuan pada pesan permintaan: 53 dan port sumber pada pesan balasannya: 53.
 
 2. **Ke alamat IP manakah pesan permintaan DNS dikirimkan? Apakah alamat IP tersebut merupakan default alamat IP server DNS lokal Anda?**
-  * **Jawaban:** 
+![ss soal 2 bundle 3](../Assets/Modul4-13.png)
+  * **Jawaban:** Pesan permintaan DNS dikirim ke alamat IP server DNS seperti di gambar. Ya, itu merupakan default alamat IP server DNS lokal saya.
 
 3. **Periksa pesan permintaan DNS. Apa ”jenis” atau ”type” dari pesan tersebut? Apakah pesan tersebut mengandung ”jawaban” atau ”answers”?**
-  * **Jawaban:** 
+![ss soal 3 bundle 3](../Assets/Modul4-15.png)
+  * **Jawaban:** Pesan permintaan DNS bertipe Type A dan tidak mengandung jawaban seperti di gambar karena dia meminta yang otomatis tidak membawa jawaban.
 
 4. **Periksa pesan balasan DNS. Berapa banyak ”jawaban” atau “answers” yang terdapat di dalamnya. Apa saja isi yang terkandung dalam setiap jawaban tersebut?**
-  * **Jawaban:** 
-
-5. **Sertakan hasil tangkapan layar.**
-  * **Hasil** 
+![ss soal 4 bundle 3](../Assets/Modul4-16.png)
+  * **Jawaban:** Ada 3 jawaban yang berisi nama domain, *tipe*, *class*, nilai TTL (*Time to Live*), panjang data, dan `CNAME`.
 
 ### Bundle 4 (nslookup –type=NS mit.edu)
 1. **Ke alamat IP manakah pesan permintaan DNS dikirimkan? Apakah alamat IP tersebut merupakan default alamat IP server DNS lokal Anda?**
-  * **Jawaban:** 
+![ss soal 1 bundle 4](../Assets/Modul4-17.png)
+  * **Jawaban:** Pesan dikirim ke alamat IP Server DNS lokal, sama seperti soal soal sebelumnya (seperti di gambar).
 
 2. **Periksa pesan permintaan DNS. Apa ”jenis” atau ”type” dari pesan tersebut? Apakah pesan tersebut mengandung ”jawaban” atau ”answers”?**
-  * **Jawaban:** 
+![ss soal 2 bundle 4](../Assets/Modul4-18.png)
+  * **Jawaban:** Pesan permintaan DNS bertipe Type A dan tidak mengandung jawaban seperti di gambar karena dia meminta yang otomatis tidak membawa jawaban.
 
 3. **Periksa pesan balasan DNS. Berapa banyak ”jawaban” atau “answers” yang terdapat di dalamnya. Apa saja isi yang terkandung dalam setiap jawaban tersebut?**
-  * **Jawaban:** 
-
-4. **Sertakan hasil tangkapan layar.**
-  * **Hasil** 
+![ss soal 3 bundle 4](../Assets/Modul4-19.png)
+  * **Jawaban:** Ada 8 jawaban yang berisi nama domain, *tipe*, *class*, nilai TTL (*Time to Live*), panjang data, dan nama server.
 
 ### Bundle 5 (nslookup www.aiit.or.kr bitsy.mit.edu)
 1. **Ke alamat IP manakah pesan permintaan DNS dikirimkan? Apakah alamat IP tersebut merupakan default alamat IP server DNS lokal Anda?**
-  * **Jawaban:** 
+![ss soal 1 bundle 5](../Assets/Modul4-21.png)
+  * **Jawaban:** Pesan dikirim ke alamat IP Server DNS lokal, sama seperti soal soal sebelumnya (seperti di gambar).
 
 2. **Periksa pesan permintaan DNS. Apa ”jenis” atau ”type” dari pesan tersebut? Apakah pesan tersebut mengandung ”jawaban” atau ”answers”?**
-  * **Jawaban:** 
+  * **Jawaban:** Pesan permintaan DNS bertipe Type A dan tidak mengandung jawaban seperti di gambar karena dia meminta yang otomatis tidak membawa jawaban.
 
 3. **Periksa pesan balasan DNS. Berapa banyak ”jawaban” atau “answers” yang terdapat di dalamnya. Apa saja isi yang terkandung dalam setiap jawaban tersebut?**
-  * **Jawaban:** 
+![ss soal 3 bundle 5](../Assets/Modul4-22.png)
+  * **Jawaban:** Ada 2 jawaban yang berisi nama domain, *tipe*, *class*, nilai TTL (*Time to Live*), panjang data, dan *Address*.
 
-4. **Sertakan hasil tangkapan layar.**
-  * **Hasil** 
+### Modul 5 (nslookup www.aiit.or.kr bitsy.mit.edu)
 
 ## 🤝 Kontribusi
 Laporan ini disusun sebagai bagian dari tugas praktikum S-1 Informatika Telkom University. Kalau kamu ingin memberikan saran atau perbaikan pada dokumentasi ini, silakan ikuti langkah berikut:
