@@ -11,16 +11,20 @@ while running:
     message = input("> ") #input dari users
     
     if message.lower() == "exit":
+        clientSocket.sendto(
+            message.encode(),
+            
+            (serverName, serverPort)
+        )
         print("[SYSTEM] Keluar dari program")
         running = False
         continue
     
     clientSocket.sendto(
-        message.encode(),
-        
-        (serverName, serverPort)
-    )
-    
+            message.encode(),
+            
+            (serverName, serverPort)
+        )
     clientSocket.recvfrom(2048)
     
     modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
@@ -29,3 +33,4 @@ while running:
     print(modifiedMessage.decode())
     
 clientSocket.close()
+print("[SYSTEM] Koneksi telah ditutup")
