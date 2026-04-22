@@ -25,7 +25,7 @@ while running:
             
             (serverName, serverPort)
         )
-    clientSocket.recvfrom(2048)
+    # clientSocket.recvfrom(2048)
     
     modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
     
