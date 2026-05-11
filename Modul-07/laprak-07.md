@@ -11,7 +11,6 @@ Kelas   : IF-04-04
 - [Implementasi Kode](#-implementasi-kode)
 - [Langkah Eksekusi](#-langkah-eksekusi)
 - [Hasil Analisis](#-hasil-analisis)
-- [Kesimpulan](#-kesimpulan)
 
 ---
 
