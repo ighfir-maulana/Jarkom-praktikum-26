@@ -54,3 +54,13 @@ Saya melakukan praktikum ini menggunakan OS Windows 10.
 7. Hentikan penangkapan paket Wireshark.
 
 ![ARP](../Assets/Modul13-5.png)
+
+## 🤝 Kontribusi
+Laporan ini disusun sebagai bagian dari tugas praktikum S-1 Informatika Telkom University. Kalau kamu ingin memberikan saran atau perbaikan pada dokumentasi ini, silakan ikuti langkah berikut:
+1.  Lakukan **Fork** pada repositori ini.
+2.  Buat branch baru untuk fitur atau perbaikan Anda.
+3.  Kirimkan **Pull Request** dengan penjelasan mengenai perubahan yang dilakukan.
+
+---
+**Informatics Lab - Telkom University**
+*Copyright © 2026 - UKM Coder*
