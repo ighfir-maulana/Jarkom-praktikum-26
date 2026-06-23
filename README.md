@@ -11,7 +11,7 @@ Repositori ini adalah dokumentasi perjalanan praktikum saya dalam mata kuliah **
 ---
 
 ## 🚀 Status Praktikum
-![Progress](https://img.shields.io/badge/Progress-12%20%2F%2016%20Modules-yellowgreen?style=for-the-badge&logo=progress)
+![Progress](https://img.shields.io/badge/Progress-14%20%2F%2014%20Modules-yellowgreen?style=for-the-badge&logo=progress)
 ![Lab](https://img.shields.io/badge/Lab-Informatics_TelU-maroon?style=for-the-badge)
 ![Tools](https://img.shields.io/badge/Analyzed_with-Wireshark-blue?style=for-the-badge&logo=wireshark)
 
@@ -32,10 +32,9 @@ Berikut adalah daftar modul praktikum yang dikerjakan berdasarkan kurikulum resm
 | **09** | [Web Server](./Modul-09/) | Web Server Berbasis TCP Socket. | ✅ |
 | **10** | [IP](./Modul-10/) | Eksploarasi Datagram IPv4 dan IPv6. | ✅ |
 | **11** | [DHCP](./Modul-11/) | Mekanisme DHCP. | ✅ |
-| **12** | [ICMP](./Modul-07/) | Eksploarasi ICMP. | ✅ |
-| **13** | ... | ... | 🚧 |
-| **...** | ... | ... | ... |
-| **16** | WiFi Investigation | Investigasi cara kerja WiFi (802.11). | ⏳ |
+| **12** | [ICMP](./Modul-12/) | Eksploarasi ICMP. | ✅ |
+| **13** | [Ethernet & ARP](./Modul-13/) | Eksploarasi eEthernet dan ARP. | ✅ |
+| **14** | [WiFi Investigation](./Modul-14/) | Investigasi cara kerja WiFi (802.11). | ✅ |
 
 ---
 
@@ -60,5 +59,7 @@ Berikut adalah daftar modul praktikum yang dikerjakan berdasarkan kurikulum resm
 ├── Modul-10/           # IP
 ├── Modul-11/           # DHCP
 ├── Modul-12/           # ICMP
+├── Modul-13/           # Ethernet dan ARP
+├── Modul-14/           # WiFi 802.11
 ├── assets/             # Kumpulan aset hasil praktikum
 └── README.md           # Tampilan utama repositori
